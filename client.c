@@ -31,7 +31,8 @@ int main(int argc, char *argv[]) {
   long port;
 
   if (argc != 4) {
-    fprintf(stderr, "./client [username] [host] [port]\n");
+    fprintf(stderr, "%s <username> <host> <port>\n", argv[0]);
+    fprintf(stderr, "Example: ./%s user localhost 9999\n", argv[0]);
     exit(1);
   }
   name = argv[1];
