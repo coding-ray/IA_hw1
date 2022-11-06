@@ -1,4 +1,4 @@
-// Eugene Li - Multithreaded chat client
+// Reference: https://github.com/eugeneli/Multithreaded-Chat-in-C
 #include <arpa/inet.h>
 #include <errno.h>
 #include <fcntl.h>

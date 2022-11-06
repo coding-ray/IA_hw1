@@ -1,4 +1,4 @@
-// Eugene Li - Multithreaded chat server
+// Reference: https://github.com/eugeneli/Multithreaded-Chat-in-C
 #include <arpa/inet.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -65,6 +65,8 @@ queue *queueInit(void);
 void queuePush(queue *q, char *msg);
 char *queuePop(queue *q);
 
+chatDataVars data;
+
 int main(int argc, char *argv[]) {
   struct sockaddr_in serverAddr;
   long port = 9999;
@@ -90,7 +92,6 @@ int main(int argc, char *argv[]) {
 
 // Spawns the new client handler thread and message consumer thread
 void startChat(int socketFd) {
-  chatDataVars data;
   data.numClients = 0;
   data.socketFd = socketFd;
   data.queue = queueInit();
