@@ -1,17 +1,16 @@
 // Reference: https://github.com/eugeneli/Multithreaded-Chat-in-C
-#include <arpa/inet.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <netdb.h>
-#include <netinet/in.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/select.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <unistd.h>
+#include <arpa/inet.h>   // htons()
+#include <errno.h>       // errno
+#include <fcntl.h>       // fcntl()
+#include <netdb.h>       // gethostbyname()
+#include <netinet/in.h>  // struct sockaddr_in
+#include <signal.h>      // signal(), SIGINT
+#include <stdio.h>       // fprintf(), fgets(), perror()
+#include <stdlib.h>      // strtol(), memset()
+#include <string.h>      // strcmp(), strcat() ... (string related)
+#include <sys/select.h>  // FD_ZERO(), FD_SET() ... (file descriptor related)
+#include <sys/socket.h>  // socket(), AF_INET
+#include <unistd.h>      // write()
 
 #define MAX_BUFFER 1024
 
